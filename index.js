@@ -15,3 +15,12 @@ function repeat(text = String, count = Number) {
 
 console.log(repeat("sometext", 2));
 console.log(repeat("wo", 3));
+
+//task 3 в процессе
+
+function getHiddenCard(card = String, count = Number) {
+  const star = "*";
+  return `${star.repeat(count)} ${card.slice(12)}`;
+}
+
+console.log(getHiddenCard("1234123412341234", 2));
