@@ -60,3 +60,24 @@ function isComplete(course: { name: string, lessons: string[] }): boolean {
   return course.lessons.length >= 4;
 }
 console.log(isComplete(course));
+
+//task 7
+
+enum ModalStatus {
+  Opened = 'Opened',
+  Closed = 'Closed',
+}
+
+function buildModal(text: string, status: ModalStatus){
+  return {
+    text: text,
+    status: status,
+     }
+
+}
+const modal = buildModal('hexlet forever', ModalStatus.Opened);
+console.log(modal); 
+
+
+
+// task 8
