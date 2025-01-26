@@ -28,7 +28,6 @@ getHiddenCard("1234567812345678"); // "****5678"
 getHiddenCard("2034399002121100", 1); // "*1100"
 
 //task 4
-
 function getEvenNumbers(numbers: number[]): number[] {
   return numbers.filter((num) => num % 2 === 0);
 }
@@ -37,3 +36,27 @@ const numbers = [
   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
 ];
 console.log(getEvenNumbers(numbers));
+
+//task 5
+function filterAnagrams(word: string, words: string[]): string[] {
+  const sortedWord = word.split("").sort().join("");
+  return words.filter((w) => w.split("").sort().join("") === sortedWord);
+}
+
+console.log(filterAnagrams("abba", ["aabb", "abcd", "bbaa", "dada"])); // ['aabb', 'bbaa']
+console.log(
+  filterAnagrams("racer", ["crazer", "carer", "racar", "caers", "racer"])
+); // ['carer', 'racer']
+console.log(filterAnagrams("laser", ["lazing", "lazy", "lacer"])); // []
+
+//task 6
+
+const course = {
+  name: "Java",
+  lessons: ["variables", "functions", "conditions"],
+};
+
+function isComplete(course: { name: string, lessons: string[] }): boolean {
+  return course.lessons.length >= 4;
+}
+console.log(isComplete(course));
