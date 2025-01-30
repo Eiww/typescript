@@ -81,3 +81,32 @@ console.log(modal);
 
 
 // task 8
+type User = {
+  name: string;
+  age: number;
+};
+
+
+function getOlderUser(user1: User, user2: User): User | null {
+  if (user1.age > user2.age) {
+    return user1;
+  } else if (user1.age < user2.age) {
+    return user2;
+  } else {
+    return null;
+  }
+}
+
+
+const user1: User = { name: 'Petr', age: 10 };
+const user2: User = { name: 'Ivan', age: 8 };
+
+const olderUser = getOlderUser(user1, user2);
+if (olderUser !== null) {
+  console.log(`Старший пользователь: ${olderUser.name}, возраст: ${olderUser.age}`);
+} else {
+  console.log('Пользователи ровесники');
+}
+
+//task 9
+
