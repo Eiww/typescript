@@ -110,3 +110,18 @@ if (olderUser !== null) {
 
 //task 9
 
+function getParams(queryString: string): { [key: string]: string } {
+    return queryString
+        .split('&') 
+        .reduce((acc, pair) => {
+            const [key, value] = pair.split('='); 
+            if (key) {
+                acc[key] = value || ''; 
+            }
+            return acc;
+        }, {} as { [key: string]: string }); 
+}
+
+console.log(getParams('per=10&page=5'));
+console.log(getParams('name=hexlet&count=3&order=asc'));
+console.log(getParams('filter=&sort=desc'));
